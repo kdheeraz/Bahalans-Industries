@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navLinks = document.querySelectorAll("nav a");
 
+            navLinks.forEach((link) => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute("href").substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    targetSection.scrollIntoView({
+                        behavior: "smooth"
+                    });
+                });
+            });
+        });
+    </script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -73,6 +88,24 @@
         section:nth-child(even) {
             background-color: #f9f9f9;
         }
+		
+		
+        .contact-section {
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            font-size: 1.2rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
 
         footer {
             background-color: #1a1a1a;
@@ -99,18 +132,19 @@
 </head>
 
 <body>
-<header style="background: black; position: relative; text-align: left;">
+<header id="home" style="background: black; position: relative; text-align: left;">
     <div style="top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);"></div>
     <div style="display: flex; align-items: center; justify-content: space-between;">
-        <div style="display: flex; align-items: center;">
+        <div  style="display: flex; align-items: center;">
             <img src="Bahalans (3).png" alt="Bahalans Industries Logo" style="width: 150px; height: 150px; margin-right: 20px; border-radius: 50%;">
             <h1 style="font-size: 3rem; color: #fff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); margin: 0;">Bahalans Industries</h1>
         </div>
         <nav style="text-align: right;">
-            <a href="#" style="text-decoration: none; color: #fff; margin: 0 15px; transition: color 0.3s ease;">Home</a>
-            <a href="#" style="text-decoration: none; color: #fff; margin: 0 15px; transition: color 0.3s ease;">Services</a>
-            <a href="#" style="text-decoration: none; color: #fff; margin: 0 15px; transition: color 0.3s ease;">Projects</a>
-            <a href="#" style="text-decoration: none; color: #fff; margin: 0 15px; transition: color 0.3s ease;">Contact</a>
+		<a href="#home" style="text-decoration: none; color: #fff; margin: 0 15px; transition: color 0.3s ease;">Home</a>
+            <a href="#websites" style="text-decoration: none; color: #fff; margin: 0 15px; transition: color 0.3s ease;">Websites</a>
+            <a href="#ai_ml" style="text-decoration: none; color: #fff; margin: 0 15px; transition: color 0.3s ease;">ML/AI</a>
+            <a href="#quantum" style="text-decoration: none; color: #fff; margin: 0 15px; transition: color 0.3s ease;">Quantum Computer</a>
+            <a href="#contact" style="text-decoration: none; color: #fff; margin: 0 15px; transition: color 0.3s ease;">Contact Us</a>
         </nav>
     </div>
 </header>
@@ -123,23 +157,33 @@
 
 
 
-    <section>
+    <section id="websites">
         <h1>Imagination as Websites ?</h1>
         <img src="DXKh.gif" alt="Web Development Image">
         <p>Creating stunning and functional websites tailored to your needs.</p>
     </section>
 
-    <section>
+    <section id="ai_ml">
         <h1>A Product Which Can Think ?</h1>
         <img src="nuero.gif" alt="ML/AI Development Image">
         <p>Utilizing cutting-edge machine learning and artificial intelligence technologies.</p>
     </section>
 	
-	 <section>
+	 <section id="quantum">
         <h1>Growth With Atoms ?</h1>
-        <img src="quantum.gif" alt="ML/AI Development Image">
+        <img src="quantum.gif" alt="ML/AI Development Image" >
         <p>Utilizing cutting-edge Quantum Computing technologies.</p>
     </section>
+	
+	        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <p>123 Main Street</p>
+                <p>City, Country</p>
+                <p>Email: info@bahalans.com</p>
+                <p>Phone: +1234567890</p>
+            </div>
+        </section>
 
     <footer>
         <p>&copy; 2023 Bahalans Industries. All rights reserved.</p>
